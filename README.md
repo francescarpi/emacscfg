@@ -8,10 +8,14 @@ Instalación
 
 * Clonar el repositorio en cualquier lugar de tu sistema.
 
+	<pre>
 	git clone --recursive https://github.com/francescarpi/emacscfg.git
+	</pre>
 
 * Activar configuración:
 
+	<pre>
 	ln -s ~/path-de-tu-emacscfg/emacs ~/.emacs
 	ln -s ~/path-de-tu-emacscfg/paquetes ~/.emacs.d/
+	</pre>
 	
