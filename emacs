@@ -1,5 +1,6 @@
 ;; Configuración para Emacs de Francesc Arpi
-;; TODO: Falta añadir url de GitHub
+;; https://github.com/francescarpi/emacscfg
+
 (custom-set-variables
 )
 
@@ -8,9 +9,13 @@
 
 ;; Carpetas que contienen paquetes...
 (add-to-list 'load-path "~/.emacs.d/paquetes/")
+(add-to-list 'load-path "~/.emacs.d/paquetes/pony-mode/")
 
 ;; Cargamos thema visual
 (load-theme 'deeper-blue t)
+
+;; Quitamos toolbar
+(tool-bar-mode -1)
 
 ;; Mostramos número de columna
 (column-number-mode t)
@@ -38,7 +43,6 @@
 (require 'less-css-mode)
 
 ;; Paquete Pony-Mode. Son paquetes para Django. Colorido en plantillas, snippets, etc.
-(add-to-list 'load-path "~/.emacs.d/paquetes/pony-mode/")
 (require 'pony-mode)
 
 ;; Emacs For Python. Conjunto de librerías para trabajar con Python
