@@ -44,4 +44,15 @@
 ;; Emacs For Python. Conjunto de librerías para trabajar con Python
 (load-file "~/.emacs.d/paquetes/emacs-for-python/epy-init.el")
 
+;; Multi Web Mode es un paquete que nos brinda colorida al javascript y css dentro de un html
+(require 'multi-web-mode)
+(setq mweb-default-major-mode 'html-mode)
+(setq mweb-tags '((js-mode "<script +\\(type=\"text/javascript\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
+                  (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
+(setq mweb-filename-extensions '("htm" "html"))
+(multi-web-global-mode 1)
+
+;; Carga de snippets mios
+(setq yas/root-directory "~/.emacs.d/paquetes/mis-snippets")
+(yas/load-directory yas/root-directory)
 
