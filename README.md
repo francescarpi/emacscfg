@@ -49,3 +49,70 @@ Combinaciones de teclas que más uso. Mi chuleta.
 | C+x C+s       | Guardar fichero                               |
 
 
+### Generales
+
+| Combinación   | Descripción                                   |
+| ------------- | --------------------------------------------- |
+| C+x C+c       | Salir de Emacs                                |
+| C+g           | Deshacer operación actual.                    |
+| A+x ansi-term | Abrir un shell del sistema                    |
+| A+x shell     | Abrir shell propio de emacs. Escrito en lisp  |
+| A+!           | Ejecutar un comando en el shell               |
+
+### Navegación
+
+| Combinación   | Descripción                                   |
+| ------------- | --------------------------------------------- |
+| C+l           | Centrar scroll vertical                       |
+| C+k           | Borrar linea actual                           |
+| C+a           | Ir al principio de una linea                  |
+| C+e           | Ir al final de una linea                      |
+| C+f           | Avanzar carácter                              |
+| C+b           | Retroceder carácter                           |
+| A+f           | Avanzar palabra                               |
+| A+b           | Retroceder palabra                            |
+| C+n           | Linea siguiente                               |
+| C+p           | Linea anterior                                |
+| C+v           | Página siguiente                              |
+| A+v           | Página anterior                               |
+| A+>           | Ir al final del documento                     |
+| A+<           | Ir al principio del documento                 |
+| A+w           | Copiar al portapapeles                        |
+| C+y           | Pegar desde el portapapeles                   |
+| C+w           | Cortar hacia el portapapeles                  |
+| C+_           | Deshacer                                      |
+| C+g C+_       | Rehacer                                       |
+| C+s           | Buscar + buscar siguiente                     |
+| C+r           | Buscar + buscar anterior                      |
+| A+g g         | Ir a una linea concreta                       |
+| C+c C+j       | Ir a una definición (clase, método, etc)      |
+| C+espacio     | Se activa modo visual                         |
+| C+d           | Borrar un carácter                            |
+| A+0..9        | Seguido de un comando, lo ejecuta n veces     |
+
+### Html - Mode
+
+| Combinación   | Descripción                                   |
+| ------------- | --------------------------------------------- |
+| C+c /         | Cierra un tag                                 |
+| C+x TAB       | Oculta tags, dejando sólo cadenas             |
+| C+c <left>    | Ir al principio del tag                       |
+| C+c <right>   | Ir al final del tag                           |
+| C+j           | Ejecuta Emmet                                 |
+
+### Dired Mode
+
+Es una ventana de navegación de ficheros, donde podemos borrarlos, renombrarlos, etc. Al hacer **C+x C+f**, si tenemos seleccionada una carpeta, pulsar **C+d** para abrir dired-mode.
+
+Acciones disponibles dentro del dm.
+
+| Combinación   | Descripción                                   |
+| ------------- | --------------------------------------------- |
+| g             | Refrescar vista                               |
+| s             | Cambiar ordenación entre fecha y nombre       |
+| d             | Marcar un fichero para borrar                 |
+| u             | Desmarcar un fichero marcado para borrar      |
+| x             | Borrar ficheros marcados                      |
+| o             | Abrir fichero en una ventana nueva            |
+| R             | Renombrar fichero                             |
+| Intro         | Abrir fichero en ventana actual               |
