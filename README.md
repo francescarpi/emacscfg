@@ -48,6 +48,8 @@ Combinaciones de teclas que más uso. Mi chuleta.
 | C+x C+f       | Abrir fichero                                 |
 | C+x C+s       | Guardar fichero                               |
 
+Buscar ficheros en un directorio:
+C+x find-dired RET seleccionar carpeta padre RET -name "*.py" RET
 
 ### Generales
 

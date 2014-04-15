@@ -56,3 +56,5 @@
 (setq yas/root-directory "~/.emacs.d/paquetes/mis-snippets")
 (yas/load-directory yas/root-directory)
 
+;; Dired+. Damos más funcionalidades al Dired Mode
+(require 'dired+)
