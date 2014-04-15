@@ -10,6 +10,7 @@
 ;; Carpetas que contienen paquetes...
 (add-to-list 'load-path "~/.emacs.d/paquetes/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/pony-mode/")
+(add-to-list 'load-path "~/.emacs.d/paquetes/helm/")
 
 ;; Cargamos thema visual
 (load-theme 'deeper-blue t)
@@ -62,3 +63,7 @@
 
 ;; Dired+. Damos más funcionalidades al Dired Mode
 (require 'dired+)
+
+;; Helm.
+(require 'helm-config)
+(helm-mode 1)
