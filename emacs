@@ -63,6 +63,7 @@
 ;; Carga de snippets mios
 (setq yas/root-directory "~/.emacs.d/paquetes/mis-snippets")
 (yas/load-directory yas/root-directory)
+(add-hook 'js-mode-hook 'yas/minor-mode)
 
 ;; Dired+. Damos más funcionalidades al Dired Mode
 (require 'dired+)
