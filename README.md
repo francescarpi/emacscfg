@@ -54,8 +54,12 @@ Dentro de la ventana de buffers, existen funcionalidades extras:
 | C+x C+f       | Abrir fichero                                 |
 | C+x C+s       | Guardar fichero                               |
 
-Buscar ficheros en un directorio:
-C+x find-dired RET seleccionar carpeta padre RET -name "*.py" RET
+* Buscar ficheros en un directorio:
+<pre>
+A+x find-dired RET seleccionar carpeta padre RET -name "*.py" RET
+</pre>
+* Buscar dentro de una carpeta
+A+x helm-do-grep RET <seleccionar carpeta> C+u RET <indicar extensión ficheros> RET <indicar patron a buscar dentro de los ficheros>
 
 ### Generales
 
