@@ -120,3 +120,6 @@ Acciones disponibles dentro del dm.
 | o             | Abrir fichero en una ventana nueva            |
 | R             | Renombrar fichero                             |
 | Intro         | Abrir fichero en ventana actual               |
+| +             | Crear un directorio                           |
+
+Para crear un fichero en dired mode, se puede hacer ejecutando un comando de shell: **A+!** + **touch <nombrefichero>**. Luego un **g** en el dired mode para refrescar la ventana
