@@ -40,6 +40,8 @@
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook  'emmet-mode)
 (setq emmet-move-cursor-between-quotes t)
+(add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; identación 2 espacios
+
 
 ;; Paquete para less y css
 (require 'less-css-mode)

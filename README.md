@@ -91,6 +91,8 @@ C+x find-dired RET seleccionar carpeta padre RET -name "*.py" RET
 | C+espacio     | Se activa modo visual                         |
 | C+d           | Borrar un carácter                            |
 | A+0..9        | Seguido de un comando, lo ejecuta n veces     |
+| C+M+e         | Saltar al final de la función/método          |
+| C+M+a         | Saltar al inicio de la función/método         |
 
 ### Html - Mode
 
