@@ -18,8 +18,9 @@
 ;; Quitamos toolbar
 (tool-bar-mode -1)
 
-;; Mostramos número de columna
+;; Mostramos número de columna y número de linea
 (column-number-mode t)
+(global-linum-mode 1)
 
 ;; Paquete de Markdown
 (autoload 'markdown-mode "markdown-mode" t)
@@ -64,6 +65,17 @@
 ;; Dired+. Damos más funcionalidades al Dired Mode
 (require 'dired+)
 
-;; Helm.
+;; Helm. Paquete muy extenso que brinda un montón de funcionalidades a Emcas.
+;; Aquí una wiki: https://github.com/emacs-helm/helm/wiki
 (require 'helm-config)
 (helm-mode 1)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+;; Desactivamos la creación de un fichero backup para cada fichero
+;; que estamos editando
+(setq make-backup-file nil)
+
+
+
+
+
