@@ -71,7 +71,8 @@
 ;; Aquí una wiki: https://github.com/emacs-helm/helm/wiki
 (require 'helm-config)
 (helm-mode 1)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x C-f") 'helm-find-files) ; Substituimos el gestor de ficheros
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list) ; Substituimos la ventana de bufers
 
 ;; Desactivamos la creación de un fichero backup para cada fichero
 ;; que estamos editando
