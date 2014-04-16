@@ -41,6 +41,12 @@ Combinaciones de teclas que más uso. Mi chuleta.
 | C+x x <left>  | Ir a la ventana de la izquierda               |
 | C+x x <up>    | Ir a la ventana de arriba                     |
 
+Dentro de la ventana de buffers, existen funcionalidades extras:
+
+* g: Refresca ventana
+* sm: Ordenar por modo
+* sv: Ordenar por fecha/hora
+
 ### Ficheros
 
 | Combinación   | Descripción                                   |
