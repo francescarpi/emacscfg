@@ -13,7 +13,9 @@
 (add-to-list 'load-path "~/.emacs.d/paquetes/helm/")
 
 ;; Cargamos thema visual
-(load-theme 'deeper-blue t)
+;(load-theme 'misterioso t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/paquetes/temas/")
+(load-theme 'misterioso t)
 
 ;; Quitamos toolbar
 (tool-bar-mode -1)
@@ -22,6 +24,8 @@
 (column-number-mode t)
 (global-linum-mode 1)
 
+;; Desactivamos pantalla de inicio
+(setq inhibit-startup-message t)
 
 ;; Paquete de Markdown
 (autoload 'markdown-mode "markdown-mode" t)
