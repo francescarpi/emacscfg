@@ -80,7 +80,8 @@
 
 ;; Desactivamos la creación de un fichero backup para cada fichero
 ;; que estamos editando
-(setq make-backup-file nil)
+(setq make-backup-files nil)
 
 ;; Lua
 (require 'lua-mode)
+
