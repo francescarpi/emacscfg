@@ -22,10 +22,12 @@
 (column-number-mode t)
 (global-linum-mode 1)
 
+
 ;; Paquete de Markdown
 (autoload 'markdown-mode "markdown-mode" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(custom-set-variables '(markdown-command "/usr/bin/pandoc"))
 
 ;; Combinaciones de teclas adicionales
 (global-set-key (kbd "C-c <right>") 'comment-region)      ; Comenta bloque de código
@@ -65,9 +67,6 @@
 (yas/load-directory yas/root-directory)
 (add-hook 'js-mode-hook 'yas/minor-mode)
 
-;; Dired+. Damos más funcionalidades al Dired Mode
-(require 'dired+)
-
 ;; Helm. Paquete muy extenso que brinda un montón de funcionalidades a Emcas.
 ;; Aquí una wiki: https://github.com/emacs-helm/helm/wiki
 (require 'helm-config)
@@ -79,7 +78,5 @@
 ;; que estamos editando
 (setq make-backup-file nil)
 
-
-
-
-
+;; Lua
+(require 'lua-mode)

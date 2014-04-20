@@ -98,8 +98,9 @@ A+x helm-do-grep RET <seleccionar carpeta> C+u RET <indicar extensión ficheros>
 | C+espacio     | Se activa modo visual                         |
 | C+d           | Borrar un carácter                            |
 | A+0..9        | Seguido de un comando, lo ejecuta n veces     |
-| C+M+e         | Saltar al final de la función/método          |
-| C+M+a         | Saltar al inicio de la función/método         |
+| A+a           | Saltar a definición interior                  |
+| A+e           | Saltar a definición siguiente                 |
+| A+m           | Saltar al principio de la identación          | 
 
 ### Html - Mode
 
@@ -110,6 +111,13 @@ A+x helm-do-grep RET <seleccionar carpeta> C+u RET <indicar extensión ficheros>
 | C+c <left>    | Ir al principio del tag                       |
 | C+c <right>   | Ir al final del tag                           |
 | C+j           | Ejecuta Emmet                                 |
+
+### Otros
+| Combinación   | Descripción                                   |
+| ------------- | --------------------------------------------- |
+| C+c C+c m     | Renderiza en html el fichero Markdown.        |
+| C+c C+c p     | Compila markdown y abre previsualización      |
+
 
 ### Dired Mode
 
