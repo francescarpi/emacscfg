@@ -138,3 +138,12 @@ Acciones disponibles dentro del dm.
 | +             | Crear un directorio                           |
 
 Para crear un fichero en dired mode, se puede hacer ejecutando un comando de shell: **A+!** + **touch <nombrefichero>**. Luego un **g** en el dired mode para refrescar la ventana
+
+### Monky
+
+Monky es un módulo para Mercurial.
+
+#### Hacer un commit.
+Todo empieza con un A+x monky-status
+
+Se abre un buffer donde podemos ver los cambios realizados. Con un **S** se marcan todos los cambios para comitar. Si queremos hacerlo de uno en uno, nos ponemos encima del fichero y puslamos **s**. Una vez marcados (staged), pulsamos **c** para hacer un commit. Se abrirá un nuevo buffer para añdir el comentario. Una vez finalizado, pulsar **C+c C+c** para realizar el commit. Con **P** se ejecuta el push.

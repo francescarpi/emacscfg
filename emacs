@@ -11,6 +11,7 @@
 (add-to-list 'load-path "~/.emacs.d/paquetes/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/pony-mode/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/helm/")
+(add-to-list 'load-path "~/.emacs.d/paquetes/monky/")
 
 ;; Cargamos thema visual
 ;(load-theme 'misterioso t)
@@ -85,3 +86,6 @@
 ;; Lua
 (require 'lua-mode)
 
+;; Monky. Paquete para mercurial
+(require 'monky)
+(setq monky-process-type 'cmdserver)
