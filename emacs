@@ -89,3 +89,5 @@
 ;; Monky. Paquete para mercurial
 (require 'monky)
 (setq monky-process-type 'cmdserver)
+(global-set-key (kbd "M-n") 'monky-status)
+
