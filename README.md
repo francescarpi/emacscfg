@@ -143,7 +143,17 @@ Para crear un fichero en dired mode, se puede hacer ejecutando un comando de she
 
 Monky es un módulo para Mercurial.
 
+Documentación sacada de aquí:
+
+http://ananthakumaran.in/monky/index.html
+
 #### Hacer un commit.
 Todo empieza con un A+x monky-status
 
 Se abre un buffer donde podemos ver los cambios realizados. Con un **S** se marcan todos los cambios para comitar. Si queremos hacerlo de uno en uno, nos ponemos encima del fichero y puslamos **s**. Una vez marcados (staged), pulsamos **c** para hacer un commit. Se abrirá un nuevo buffer para añdir el comentario. Una vez finalizado, pulsar **C+c C+c** para realizar el commit. Con **P** se ejecuta el push.
+
+#### Ramas
+Con **b** se abre un buffer con las ramas del proyecto. Si nos situamos encima de una y pulsamos **C**, se hace un checkout. Cambiamos de rama.
+
+#### Ejecutar comandos
+En el buffer de status, si pulsamos **:** nos permite ejecutar un comando de mercurial.
