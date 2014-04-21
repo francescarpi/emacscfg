@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Class Meta con ordering
+# key: metao
+# --
+class Meta:
+    ordering = ("$1", )

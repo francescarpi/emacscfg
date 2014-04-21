@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Model ManyToMany
+# key: mmany
+# --
+${1:nombre} = models.ManyToManyField($2, verbose_name=u"${1:$(capitalize text)}")

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Model PositiveIntegerfield
+# key: mint
+# --
+${1:nombre} = models.PositiveIntegerField(u"${1:$(capitalize text)}", default=$2)

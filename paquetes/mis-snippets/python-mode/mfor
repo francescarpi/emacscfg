@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Model ForeignKey
+# key: mfor
+# --
+${1:nombre} = models.ForeignKey($2, verbose_name=u"${1:$(capitalize text)}")

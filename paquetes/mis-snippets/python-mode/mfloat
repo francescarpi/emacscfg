@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Model Floatfield
+# key: mfloat
+# --
+${1:nombre} = models.FloatField(u"${1:$(capitalize text)}", default=$2)

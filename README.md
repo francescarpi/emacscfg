@@ -159,3 +159,36 @@ Con **b** se abre un buffer con las ramas del proyecto. Si nos situamos encima d
 
 #### Ejecutar comandos
 En el buffer de status, si pulsamos **:** nos permite ejecutar un comando de mercurial.
+
+### Snippets
+
+A parte de los snippets que ya llevan los paquetes instalados, he añadido algunos nuevos que detallo a continuación:
+
+**html-mode**
+
+| Disparador | Descripción                                                                   |
+| ---------- | ----------------------------------------------------------------------------- |
+| block      | Bloque de django {% block <nombre> %}{% endblock %}                           |
+| trans      | Traducción {% trans "" %}                                                     |
+| url        | Reverse de url {% url "" %}                                                   |
+
+**js-mode**
+
+| Disparador | Descripción                                                                   |
+| ---------- | ----------------------------------------------------------------------------- |
+| jqplug     | Estructura básica de un plugin jQuery, vacío. Para empezar a trabajarlo       |
+
+**python-mode**
+
+| Disparador | Descripción                                                                   |
+| ---------- | ----------------------------------------------------------------------------- |
+| cm         | Bloque de comentario multilinea, para el docstring de una clase nueva         |
+| sbu        | Coloca el intérprete de python y la codificación utf-8 al inicio del doc      |
+| mchar      | Model CharField.                                                              |
+| mfor       | Model ForeignKey                                                              |
+| mmany      | Model ManyToManyField                                                         |
+| mfloat     | Model FloatField                                                              |
+| mint       | Model PositiveIntegerField                                                    |
+| metao      | Class Meta con un ordering                                                    |
+| verbb      | Bloque de verbose_name y verbose_name_plural                                  |
+

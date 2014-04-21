@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Model CharField
+# key: mchar
+# --
+${1:nombre} = models.CharField(u"${1:$(capitalize text)}", max_length=$2)

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Verbose bloque
+# key: verbb
+# --
+verbose_name = u"$1"
+verbose_name_plural = u"$2"
