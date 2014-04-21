@@ -12,6 +12,7 @@
 (add-to-list 'load-path "~/.emacs.d/paquetes/pony-mode/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/helm/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/monky/")
+(add-to-list 'load-path "~/.emacs.d/paquetes/multiple-cursors.el/")
 
 ;; Cargamos thema visual
 ;(load-theme 'misterioso t)
@@ -91,3 +92,8 @@
 (setq monky-process-type 'cmdserver)
 (global-set-key (kbd "M-n") 'monky-status)
 
+;; Multiple-curosr. Permite selección múltiple
+(require 'multiple-cursors)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
