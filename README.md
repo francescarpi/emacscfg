@@ -183,6 +183,8 @@ A parte de los snippets que ya llevan los paquetes instalados, he añadido algun
 | block      | Bloque de django {% block <nombre> %}{% endblock %}                           |
 | trans      | Traducción {% trans "" %}                                                     |
 | url        | Reverse de url {% url "" %}                                                   |
+| ext        | Añade un {% extnds "" %}                                                      |
+| inc        | Añade un {% include "" %}                                                     |
 
 **js-mode**
 
