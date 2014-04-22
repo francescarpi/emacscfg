@@ -111,6 +111,7 @@ Relacionado con el modo visual, selección.
 | C+>           | Selección similar siguiente                   |
 | C+<           | Selección similar anterior                    |
 | C+c C+<       | Selección similar todas                       |
+| Mayus+A+f     | Seleccionar una palabra                       |
 
 
 ### Html - Mode
