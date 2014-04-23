@@ -160,6 +160,8 @@ Cuando estamos en la navegación de ficheros que se dispara mediante C+x C+f
 | C+s           | Grep recursivo                                |
 | A+e           | Salta al Eshell                               |
 | A+i           | Abre un tooltip con información del fichero   |
+| C+c /         | Locate a partir de la carpeta donde estés     |
+
 
 ### Buffer mode
 
@@ -213,6 +215,7 @@ A parte de los snippets que ya llevan los paquetes instalados, he añadido algun
 | Disparador | Descripción                                                                   |
 | ---------- | ----------------------------------------------------------------------------- |
 | jqplug     | Estructura básica de un plugin jQuery, vacío. Para empezar a trabajarlo       |
+| log        | Añade un console.log()                                                        |
 
 **python-mode**
 

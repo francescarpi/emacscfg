@@ -63,8 +63,8 @@
 ;; Multi Web Mode es un paquete que nos brinda colorida al javascript y css dentro de un html
 (require 'multi-web-mode)
 (setq mweb-default-major-mode 'html-mode)
-(setq mweb-tags '((js-mode "<script +\\(type=\"text/javascript\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
-                  (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")
+(setq mweb-tags '((js-mode "<script[^>]*>\\|{% block onready %}" "</script>\\|{% endblock onready %}")
+                  (css-mode "<style[^>]*>" "</style>")
 ))
 (setq mweb-filename-extensions '("htm" "html"))
 (multi-web-global-mode 1)
