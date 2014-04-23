@@ -151,6 +151,25 @@ Acciones disponibles dentro del dm.
 
 Para crear un fichero en dired mode, se puede hacer ejecutando un comando de shell: **A+!** + **touch <nombrefichero>**. Luego un **g** en el dired mode para refrescar la ventana
 
+### Helm Find File Mode
+
+Cuando estamos en la navegación de ficheros que se dispara mediante C+x C+f
+
+| Combinación   | Descripción                                   |
+| ------------- | --------------------------------------------- |
+| C+s           | Grep recursivo                                |
+| A+e           | Salta al Eshell                               |
+| A+i           | Abre un tooltip con información del fichero   |
+
+### Buffer mode
+
+Cuando estamos en la ventana de gestión de buffers
+
+| Combinación   | Descripción                                   |
+| ------------- | --------------------------------------------- |
+| A+<espacio>   | Marcar                                        |
+| A+D           | Kill buffers marcados                         |
+
 ### Monky
 
 Monky es un módulo para Mercurial.
@@ -164,7 +183,10 @@ Todo empieza con un A+x monky-status
 
 Se abre un buffer donde podemos ver los cambios realizados. Con un **S** se marcan todos los cambios para comitar. Si queremos hacerlo de uno en uno, nos ponemos encima del fichero y puslamos **s**. Una vez marcados (staged), pulsamos **c** para hacer un commit. Se abrirá un nuevo buffer para añdir el comentario. Una vez finalizado, pulsar **C+c C+c** para realizar el commit. Con **P** se ejecuta el push.
 
+Si queremos borrar un fichero no trackeado, utilizar la tecla **k**.
+
 _Nota_: He añadido la combinación **A+n** que ejecuta un **monky-status**
+
 
 #### Ramas
 Con **b** se abre un buffer con las ramas del proyecto. Si nos situamos encima de una y pulsamos **C**, se hace un checkout. Cambiamos de rama.
