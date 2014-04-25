@@ -192,11 +192,10 @@ Si queremos borrar un fichero no trackeado, utilizar la tecla **k**.
 
 _Nota_: He añadido la combinación **A+n** que ejecuta un **monky-status**
 
-Desde la ventana de monky, podemos hacer un update para cambiar de rama con **C**.
-
-
 #### Ramas
 Con **b** se abre un buffer con las ramas del proyecto. Si nos situamos encima de una y pulsamos **C**, se hace un checkout. Cambiamos de rama.
+
+También es posible cambiar de rama desde la propia ventan de monky, con **C**
 
 #### Ejecutar comandos
 En el buffer de status, si pulsamos **:** nos permite ejecutar un comando de mercurial.
