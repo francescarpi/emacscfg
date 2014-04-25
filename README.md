@@ -94,7 +94,7 @@ A+x helm-do-grep RET <seleccionar carpeta> C+u RET <indicar extensión ficheros>
 | C+s           | Buscar + buscar siguiente                     |
 | C+r           | Buscar + buscar anterior                      |
 | A+g g         | Ir a una linea concreta                       |
-| C+c C+j       | Ir a una definición (clase, método, etc)      |
+| C+c j         | Ir a una definición (clase, método, etc)      |
 | C+d           | Borrar un carácter                            |
 | A+0..9        | Seguido de un comando, lo ejecuta n veces     |
 | A+a           | Saltar a definición interior                  |

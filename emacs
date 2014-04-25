@@ -34,6 +34,7 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (custom-set-variables '(markdown-command "/usr/bin/pandoc"))
+;(add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 
 ;; Combinaciones de teclas adicionales
 (global-set-key (kbd "C-c <right>") 'comment-region)      ; Comenta bloque de código
@@ -80,6 +81,7 @@
 (helm-mode 1)
 (global-set-key (kbd "C-x C-f") 'helm-find-files) ; Substituimos el gestor de ficheros
 (global-set-key (kbd "C-x C-b") 'helm-buffers-list) ; Substituimos la ventana de bufers
+(global-set-key (kbd "C-c j") 'helm-imenu)
 
 ;; Desactivamos la creación de un fichero backup para cada fichero
 ;; que estamos editando
