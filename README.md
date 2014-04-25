@@ -94,7 +94,7 @@ A+x helm-do-grep RET <seleccionar carpeta> C+u RET <indicar extensión ficheros>
 | C+s           | Buscar + buscar siguiente                     |
 | C+r           | Buscar + buscar anterior                      |
 | A+g g         | Ir a una linea concreta                       |
-| C+c j         | Ir a una definición (clase, método, etc)      |
+| C+c C+j       | Ir a una definición (clase, método, etc)      |
 | C+d           | Borrar un carácter                            |
 | A+0..9        | Seguido de un comando, lo ejecuta n veces     |
 | A+a           | Saltar a definición interior                  |
@@ -112,6 +112,8 @@ Relacionado con el modo visual, selección.
 | C+<           | Selección similar anterior                    |
 | C+c C+<       | Selección similar todas                       |
 | Mayus+A+f     | Seleccionar una palabra                       |
+| C+c >         | Identar la selección hacia la derecha         |
+| C+c <         | Identar la selección hacia la izquierda       |
 
 
 ### Html - Mode
@@ -160,8 +162,9 @@ Cuando estamos en la navegación de ficheros que se dispara mediante C+x C+f
 | C+s           | Grep recursivo                                |
 | A+e           | Salta al Eshell                               |
 | A+i           | Abre un tooltip con información del fichero   |
-| C+c /         | Locate a partir de la carpeta donde estés     |
+| C+c /         | Find a partir de la carpeta donde estés       |
 
+Para configurar helm, ejecutar **helm-configuration**. Allí podemos modificar la recursividad del comando helm-grep, entre muchas otras cosas.
 
 ### Buffer mode
 
@@ -188,6 +191,8 @@ Se abre un buffer donde podemos ver los cambios realizados. Con un **S** se marc
 Si queremos borrar un fichero no trackeado, utilizar la tecla **k**.
 
 _Nota_: He añadido la combinación **A+n** que ejecuta un **monky-status**
+
+Desde la ventana de monky, podemos hacer un update para cambiar de rama con **C**.
 
 
 #### Ramas

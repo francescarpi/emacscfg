@@ -2,10 +2,18 @@
 ;; https://github.com/francescarpi/emacscfg
 
 (custom-set-variables
-)
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(markdown-command "/usr/bin/pandoc"))
 
 (custom-set-faces
-)
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 
 ;; Carpetas que contienen paquetes...
 (add-to-list 'load-path "~/.emacs.d/paquetes/")
@@ -33,7 +41,7 @@
 (autoload 'markdown-mode "markdown-mode" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-(custom-set-variables '(markdown-command "/usr/bin/pandoc"))
+
 ;(add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 
 ;; Combinaciones de teclas adicionales
@@ -75,14 +83,6 @@
 (yas/load-directory yas/root-directory)
 (add-hook 'js-mode-hook 'yas/minor-mode)
 
-;; Helm. Paquete muy extenso que brinda un montón de funcionalidades a Emcas.
-;; Aquí una wiki: https://github.com/emacs-helm/helm/wiki
-(require 'helm-config)
-(helm-mode 1)
-(global-set-key (kbd "C-x C-f") 'helm-find-files) ; Substituimos el gestor de ficheros
-(global-set-key (kbd "C-x C-b") 'helm-buffers-list) ; Substituimos la ventana de bufers
-(global-set-key (kbd "C-c j") 'helm-imenu)
-
 ;; Desactivamos la creación de un fichero backup para cada fichero
 ;; que estamos editando
 (setq make-backup-files nil)
@@ -100,3 +100,13 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; Helm. Paquete muy extenso que brinda un montón de funcionalidades a Emcas.
+;; Aquí una wiki: https://github.com/emacs-helm/helm/wiki
+(require 'helm-config)
+(helm-mode 1)
+(global-set-key (kbd "C-x C-f") 'helm-find-files) ; Substituimos el gestor de ficheros
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list) ; Substituimos la ventana de bufers
+(global-set-key (kbd "C-c j") 'helm-imenu)
+(setq helm-grep-default-command "grep -R -n%cH -e %p *")
+
