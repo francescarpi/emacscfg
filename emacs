@@ -6,6 +6,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(helm-boring-file-regexp-list (quote ("\\.git$" "\\.hg$" "\\.svn$" "\\.CVS$" "\\._darcs$" "\\.la$" "\\.o$" "\\.pyc$" "~$")))
  '(markdown-command "/usr/bin/pandoc"))
 
 (custom-set-faces
@@ -107,6 +108,18 @@
 (helm-mode 1)
 (global-set-key (kbd "C-x C-f") 'helm-find-files) ; Substituimos el gestor de ficheros
 (global-set-key (kbd "C-x C-b") 'helm-buffers-list) ; Substituimos la ventana de bufers
-(global-set-key (kbd "C-c j") 'helm-imenu)
+(global-set-key (kbd "C-c C-j") 'helm-imenu)
 (setq helm-grep-default-command "grep -R -n%cH -e %p *")
+(defcustom helm-boring-file-regexp-list
+  '("\\.git$" "\\.hg$" "\\.svn$" "\\.CVS$" "\\._darcs$" "\\.la$" "\\.o$" "~$" "\\.pyc$")
+  "The regexp list matching boring files."
+  :group 'helm-files
+  :type '(repeat (choice regexp)))
 
+
+;; Minimap
+(require 'minimap)
+
+;; Undo tree
+(require 'undo-tree)
+(global-undo-tree-mode)

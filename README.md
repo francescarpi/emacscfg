@@ -67,6 +67,8 @@ A+x helm-do-grep RET <seleccionar carpeta> C+u RET <indicar extensión ficheros>
 | A+x ansi-term | Abrir un shell del sistema                    |
 | A+x shell     | Abrir shell propio de emacs. Escrito en lisp  |
 | A+!           | Ejecutar un comando en el shell               |
+| C+x u         | Abrir árbol de undo                           |
+
 
 ### Navegación
 
@@ -114,7 +116,8 @@ Relacionado con el modo visual, selección.
 | Mayus+A+f     | Seleccionar una palabra                       |
 | C+c >         | Identar la selección hacia la derecha         |
 | C+c <         | Identar la selección hacia la izquierda       |
-
+| Mayus+A+<der> | Tabular selección hacia la derecha            |
+| Mayus+A+<izq> | Tabular selección hacia la izquierda          |
 
 ### Html - Mode
 
@@ -235,3 +238,9 @@ A parte de los snippets que ya llevan los paquetes instalados, he añadido algun
 | metao      | Class Meta con un ordering                                                    |
 | verbb      | Bloque de verbose_name y verbose_name_plural                                  |
 
+## Pendiente de resolver
+
+Listado de puntos pendientes de investigar y mejorar
+
+* Poder añadir un filtro en el modo de apertura de ficheros para omitir los *.pyc
+* En el listado de buffers, si los ficheros abiertos tienen paths muy largos, no veo en que carpeta están...
