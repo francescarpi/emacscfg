@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ifequal
+# key: ifequal
+# --
+{% ifequal $1 $2 %}
+   $0
+{% endifequal %}

@@ -119,6 +119,13 @@ Relacionado con el modo visual, selección.
 | Mayus+A+<der> | Tabular selección hacia la derecha            |
 | Mayus+A+<izq> | Tabular selección hacia la izquierda          |
 
+### Registros
+
+Los registros son un tema muy interesante. Podemos almacenar posiciones del cursor, bufers, etc, en un número de registro y luego volver a él.
+
+Guardar registro: C+x r <espacio> <numero_registro>
+Ir a registro: C+x rj <numero_registro>
+
 ### Html - Mode
 
 | Combinación   | Descripción                                   |
@@ -242,5 +249,4 @@ A parte de los snippets que ya llevan los paquetes instalados, he añadido algun
 
 Listado de puntos pendientes de investigar y mejorar
 
-* Poder añadir un filtro en el modo de apertura de ficheros para omitir los *.pyc
 * En el listado de buffers, si los ficheros abiertos tienen paths muy largos, no veo en que carpeta están...

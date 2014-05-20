@@ -7,6 +7,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(helm-boring-file-regexp-list (quote ("\\.git$" "\\.hg$" "\\.svn$" "\\.CVS$" "\\._darcs$" "\\.la$" "\\.o$" "\\.pyc$" "~$")))
+ '(helm-buffer-details-flag t)
+ '(helm-buffer-max-length 20)
+ '(helm-ff-skip-boring-files t)
+ '(helm-truncate-lines nil)
  '(markdown-command "/usr/bin/pandoc"))
 
 (custom-set-faces
@@ -123,3 +127,4 @@
 ;; Undo tree
 (require 'undo-tree)
 (global-undo-tree-mode)
+
