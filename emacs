@@ -56,6 +56,7 @@
 (global-set-key (kbd "C-x x <down>") 'windmove-down)      ; Ir a la ventana de abajo
 (global-set-key (kbd "C-x x <left>") 'windmove-left)      ; Ir a la ventana de la izquierda
 (global-set-key (kbd "C-x x <up>") 'windmove-up)          ; Ir a la ventana de arriba
+(global-set-key (kbd "C-<return>") 'goto-line)            ; Ir a linea
 
 ;; Activación de Emmet. Ayuda en la construcción de código Html
 (require 'emmet-mode)
