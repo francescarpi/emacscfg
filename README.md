@@ -245,7 +245,12 @@ A parte de los snippets que ya llevan los paquetes instalados, he añadido algun
 | metao      | Class Meta con un ordering                                                    |
 | verbb      | Bloque de verbose_name y verbose_name_plural                                  |
 
-## Pendiente de resolver
+## Acciones, funciones personalizadas
+
+* **Alt+x cdsitepackages**: Nos permite escoger un entorno virtual y abre helm-find-files situado en la carpeta del site-packages.
+* **Alt+x cdvirtualenv**: Lo mismo, pero se situa en la raíz del entorno virtual.
+
+## Pendiente a resolver
 
 Listado de puntos pendientes de investigar y mejorar
 

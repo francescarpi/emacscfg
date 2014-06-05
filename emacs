@@ -6,7 +6,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(helm-boring-file-regexp-list (quote ("\\.git$" "\\.hg$" "\\.svn$" "\\.CVS$" "\\._darcs$" "\\.la$" "\\.o$" "\\.pyc$" "~$")))
+ '(helm-boring-file-regexp-list (quote ("\\.git$" "\\.hg$" "\\.svn$" "\\.CVS$" "\\._darcs$" "\\.la$" "\\.o$" "\\.pyc$" "~$" "\\.egg-info" "\\.egg-link")))
  '(helm-buffer-details-flag t)
  '(helm-buffer-max-length 20)
  '(helm-ff-skip-boring-files t)
@@ -31,6 +31,7 @@
 ;(load-theme 'misterioso t)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/paquetes/temas/")
 (load-theme 'misterioso t)
+;(load-theme 'naquadah t)
 
 ;; Quitamos toolbar
 (tool-bar-mode -1)
@@ -129,3 +130,20 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
+;; Ini files
+(require 'any-ini-mode)
+
+;; Añado acciones para acceder a la carpeta del sitepackages del entorno
+;; seleccionado o a la carpeta raíz del entorno
+(require 'virtualenv)
+(defun cdsitepackages (name)
+  (interactive (list (completing-read "Virtualenv: " (virtualenv-workon-complete))))
+  (setq path (concat (getenv "WORKON_HOME") "/" name "/lib/python2.7/site-packages/"))
+  (helm-find-files-1 path)
+  )
+ 
+(defun cdvirtualenv (name)
+  (interactive (list (completing-read "Virtualenv: " (virtualenv-workon-complete))))
+  (setq path (concat (getenv "WORKON_HOME") "/" name "/"))
+  (helm-find-files-1 path)
+  )
