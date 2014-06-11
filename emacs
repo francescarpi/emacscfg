@@ -26,6 +26,8 @@
 (add-to-list 'load-path "~/.emacs.d/paquetes/helm/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/monky/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/multiple-cursors.el/")
+(add-to-list 'load-path "~/.emacs.d/paquetes/jabber/")
+(add-to-list 'load-path "~/.emacs.d/paquetes/hamster/")
 
 ;; Cargamos thema visual
 ;(load-theme 'misterioso t)
@@ -130,7 +132,7 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
-;; Ini files
+;; Ini filesn
 (require 'any-ini-mode)
 
 ;; Añado acciones para acceder a la carpeta del sitepackages del entorno
@@ -147,3 +149,22 @@
   (setq path (concat (getenv "WORKON_HOME") "/" name "/"))
   (helm-find-files-1 path)
   )
+
+;; Jabber
+(require 'jabber)
+(setq jabber-vcard-avatars-retrieve nil)
+
+(defun send-message-dbus (msg)
+  (if *jabber-connected*
+      (call-process-shell-command (format "notify-send -u critical -t 5000 -i /usr/share/icons/gnome/24x24/status/user-available.png \"Missatge de Jabber\" \"%s\"" msg))))
+
+(defun jabber-notify-dbus(from buffer text prosed-alert)
+  (send-message-dbus text))
+
+(add-hook 'jabber-alert-message-hooks 'jabber-notify-dbus)
+
+
+;; Plugin de hamster. Creación propia
+(require 'hamster)
+(hamster-mode 1)
+
