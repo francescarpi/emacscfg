@@ -6,6 +6,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("025354235e98db5e7fd9c1a74622ff53ad31b7bde537d290ff68d85665213d85" "3a727bdc09a7a141e58925258b6e873c65ccf393b2240c51553098ca93957723" default)))
  '(helm-boring-file-regexp-list (quote ("\\.git$" "\\.hg$" "\\.svn$" "\\.CVS$" "\\._darcs$" "\\.la$" "\\.o$" "\\.pyc$" "~$" "\\.egg-info" "\\.egg-link")))
  '(helm-buffer-details-flag t)
  '(helm-buffer-max-length 20)
@@ -26,8 +27,9 @@
 (add-to-list 'load-path "~/.emacs.d/paquetes/helm/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/monky/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/multiple-cursors.el/")
-(add-to-list 'load-path "~/.emacs.d/paquetes/jabber/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/hamster/")
+(add-to-list 'load-path "~/.emacs.d/paquetes/smart-mode-line/")
+(add-to-list 'load-path "~/.emacs.d/paquetes/dash.el/")
 
 ;; Cargamos thema visual
 ;(load-theme 'misterioso t)
@@ -101,7 +103,7 @@
 
 ;; Monky. Paquete para mercurial
 (require 'monky)
-(setq monky-process-type 'cmdserver)
+;;(setq monky-process-type 'cmdserver)
 (global-set-key (kbd "M-n") 'monky-status)
 
 ;; Multiple-curosr. Permite selección múltiple
@@ -150,9 +152,6 @@
   (helm-find-files-1 path)
   )
 
-;; Jabber
-(require 'jabber)
-(setq jabber-vcard-avatars-retrieve nil)
 
 (defun send-message-dbus (msg)
   (if *jabber-connected*
@@ -163,8 +162,50 @@
 
 (add-hook 'jabber-alert-message-hooks 'jabber-notify-dbus)
 
+;; Para tener emoticonos en jabber
+(require 'autosmiley)
+(add-hook 'jabber-chat-mode-hook 'autosmiley-mode)
 
 ;; Plugin de hamster. Creación propia
 (require 'hamster)
 (hamster-mode 1)
 
+(put 'upcase-region 'disabled nil)
+
+;; go...
+(defun my-go-mode-hook () 
+  (add-hook 'before-save-hook 'gofmt-before-save) 
+  (setq tab-width 4 indent-tabs-mode 1)) 
+(add-hook 'go-mode-hook 'my-go-mode-hook) 
+
+(put 'dired-find-alternate-file 'disabled nil)
+
+
+;; Redefino función que muestra los detalles del helm buffer para cortar
+;; el path. Me gusta tener ventanas divididas horizontalmente y cuando
+;; tengo más de un fichero que se llama igual, y está en un path muy largo
+;; no consigo distingirlos.
+(defun helm-buffer--show-details (buf-name prefix help-echo
+                                  size mode dir face1 face2
+                                  proc details)
+  (append
+   (list
+    (concat prefix
+            (propertize buf-name 'face face1
+                        'help-echo help-echo)))
+   (and details
+        (list size mode
+              (propertize
+               (if proc
+                   (format "(%s %s in `%s')"
+                           (process-name proc)
+                           (process-status proc) dir)
+                   (format ".../%s" (mapconcat 'identity (last(split-string dir "/") 3) "/")))
+                          'face face2)))))
+
+
+;; Smart Mode Line
+(require 'dash)
+(require 'smart-mode-line)
+(sml/setup)
+(sml/apply-theme 'respectful)
