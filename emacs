@@ -27,7 +27,6 @@
 (add-to-list 'load-path "~/.emacs.d/paquetes/helm/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/monky/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/multiple-cursors.el/")
-(add-to-list 'load-path "~/.emacs.d/paquetes/hamster/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/smart-mode-line/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/dash.el/")
 
@@ -69,7 +68,6 @@
 (add-hook 'css-mode-hook  'emmet-mode)
 (setq emmet-move-cursor-between-quotes t)
 (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; identación 2 espacios
-
 
 ;; Paquete para less y css
 (require 'less-css-mode)
@@ -167,6 +165,8 @@
 (add-hook 'jabber-chat-mode-hook 'autosmiley-mode)
 
 ;; Plugin de hamster. Creación propia
+(add-to-list 'load-path "~/.emacs.d/paquetes/hamster/")
+(setq hamster-bd "/home/farpi/.local/share/hamster-applet/hamster.db")
 (require 'hamster)
 (hamster-mode 1)
 
@@ -205,7 +205,13 @@
 
 
 ;; Smart Mode Line
-(require 'dash)
-(require 'smart-mode-line)
-(sml/setup)
-(sml/apply-theme 'respectful)
+;; (require 'dash)
+;; (require 'smart-mode-line)
+;; (sml/setup)
+;; (sml/apply-theme 'respectful)
+
+;; Powerline...
+(add-to-list 'load-path "~/.emacs.d/paquetes/powerline/")
+(require 'powerline)
+(powerline-center-theme)
+
