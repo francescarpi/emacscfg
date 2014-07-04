@@ -25,7 +25,6 @@
 (add-to-list 'load-path "~/.emacs.d/paquetes/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/pony-mode/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/helm/")
-(add-to-list 'load-path "~/.emacs.d/paquetes/monky/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/multiple-cursors.el/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/smart-mode-line/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/dash.el/")
@@ -98,11 +97,6 @@
 
 ;; Lua
 (require 'lua-mode)
-
-;; Monky. Paquete para mercurial
-(require 'monky)
-;;(setq monky-process-type 'cmdserver)
-(global-set-key (kbd "M-n") 'monky-status)
 
 ;; Multiple-curosr. Permite selección múltiple
 (require 'multiple-cursors)
@@ -205,13 +199,13 @@
 
 
 ;; Smart Mode Line
-;; (require 'dash)
-;; (require 'smart-mode-line)
-;; (sml/setup)
-;; (sml/apply-theme 'respectful)
+(require 'dash)
+(require 'smart-mode-line)
+(sml/setup)
+(sml/apply-theme 'respectful)
 
 ;; Powerline...
-(add-to-list 'load-path "~/.emacs.d/paquetes/powerline/")
-(require 'powerline)
-(powerline-center-theme)
+;; (add-to-list 'load-path "~/.emacs.d/paquetes/powerline/")
+;; (require 'powerline)
+;; (powerline-center-theme)
 
