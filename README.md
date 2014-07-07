@@ -173,6 +173,8 @@ Cuando estamos en la navegación de ficheros que se dispara mediante C+x C+f
 | A+e           | Salta al Eshell                               |
 | A+i           | Abre un tooltip con información del fichero   |
 | C+c /         | Find a partir de la carpeta donde estés       |
+| A+p           | Historial de directorios recientes            |
+| C+c h         | Historial archivos recientes                  |
 
 Para configurar helm, ejecutar **helm-configuration**. Allí podemos modificar la recursividad del comando helm-grep, entre muchas otras cosas.
 
