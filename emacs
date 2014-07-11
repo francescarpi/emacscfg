@@ -204,8 +204,13 @@
 (sml/setup)
 (sml/apply-theme 'respectful)
 
-;; Powerline...
-;; (add-to-list 'load-path "~/.emacs.d/paquetes/powerline/")
-;; (require 'powerline)
-;; (powerline-center-theme)
+;; Desactivamos tecla de C-z para no minimizar emacs en caso accidental.
+(global-unset-key (kbd "C-z"))
 
+;; Plugin propio para mercurial
+(add-to-list 'load-path "~/.emacs.d/paquetes/simplehg/")
+(require 'simplehg)
+(global-set-key (kbd "M-n") 'simplehg-status-buffer)
+
+;; Php mode...
+(require 'php-mode)
