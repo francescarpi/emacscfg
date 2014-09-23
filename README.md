@@ -95,13 +95,17 @@ A+x helm-do-grep RET <seleccionar carpeta> C+u RET <indicar extensión ficheros>
 | C+g C+_       | Rehacer                                       |
 | C+s           | Buscar + buscar siguiente                     |
 | C+r           | Buscar + buscar anterior                      |
-| C+return      | Ir a una linea concreta                       |
+| A+g A+g       | Ir a una linea concreta                       |
 | C+c C+j       | Ir a una definición (clase, método, etc)      |
+| C+c g         | Rope. Saltar definición dentro proyecto       |
 | C+d           | Borrar un carácter                            |
 | A+0..9        | Seguido de un comando, lo ejecuta n veces     |
 | A+a           | Saltar a definición interior                  |
 | A+e           | Saltar a definición siguiente                 |
 | A+m           | Saltar al principio de la identación          | 
+| C-c n         | Modo multi cursor. Seleccionar siguiente      |
+| C-c p         | Modo multi cursor. Seleccionar anterior       |
+| C-c a         | Modo multi cursor. Seleccionar todos          |
 
 ### Selección
 

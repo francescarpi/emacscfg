@@ -6,13 +6,21 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("025354235e98db5e7fd9c1a74622ff53ad31b7bde537d290ff68d85665213d85" "3a727bdc09a7a141e58925258b6e873c65ccf393b2240c51553098ca93957723" default)))
+ '(ansi-color-names-vector ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
+ '(ansi-term-color-vector [unspecified "#000000" "#d54e53" "#afd75f" "#e7c547" "#5f87d7" "#af87d7" "#5f87d7" "#dadada"])
+ '(custom-enabled-themes (quote (smart-mode-line-respectful)))
+ '(custom-safe-themes (quote ("78d80c985e7ef0423017b767e7024f17085bcd948c5b23fbe51d8d3ce7191bcb" "37d0cdc1e79ae56cd1ea262dd6b84939fcc15d7977e320e2c7249c140aafc032" "8a1bb0702556a9cf0b9f0f01b8d3540deb70147d99d6ab1ca4d844875cf5b65e" "efd849c804148b88536914ccdee08285fd7376e2e3334522c9afc00fd7e594da" "60c9c0826f2ec9293425bdfebac988457a2fb64cc037ef5407b55b705cb847fb" "a9b91f3865f324bc78b164282aec551cd716f8243a3eca6ee65ec634f3d717e6" "a734af876472852cbc850f61e90bab0c35391c12a713852d286fdb37c2e5f545" "8052841ca206d67ca02235dfa37657acac0ce237193dbd6f34d6554a357e29ef" "c6fbc8c65a6f572cc4b01335a2c16c8c1a8308ced515e6ca04741aee18300849" "4e59bfe2e786d199b21540994d4c444fa5e6113527c45a722f272ed3ba6b9945" "eae93d3c2cbc9fe5f5a922d718002fd82625596b42e4fb05e714a77424313eb1" "025354235e98db5e7fd9c1a74622ff53ad31b7bde537d290ff68d85665213d85" "3a727bdc09a7a141e58925258b6e873c65ccf393b2240c51553098ca93957723" default)))
+ '(fci-rule-character-color "#1c1c1c")
+ '(fci-rule-color "#1c1c1c")
  '(helm-boring-file-regexp-list (quote ("\\.git$" "\\.hg$" "\\.svn$" "\\.CVS$" "\\._darcs$" "\\.la$" "\\.o$" "\\.pyc$" "~$" "\\.egg-info" "\\.egg-link")))
  '(helm-buffer-details-flag t)
  '(helm-buffer-max-length 20)
  '(helm-ff-skip-boring-files t)
  '(helm-truncate-lines nil)
- '(markdown-command "/usr/bin/pandoc"))
+ '(markdown-command "/usr/bin/pandoc")
+ '(send-mail-function (quote smtpmail-send-it))
+ '(smtpmail-smtp-server "mail.apsl.net")
+ '(smtpmail-smtp-service 25))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -25,18 +33,19 @@
 (add-to-list 'load-path "~/.emacs.d/paquetes/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/pony-mode/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/helm/")
-(add-to-list 'load-path "~/.emacs.d/paquetes/multiple-cursors.el/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/smart-mode-line/")
 (add-to-list 'load-path "~/.emacs.d/paquetes/dash.el/")
 
 ;; Cargamos thema visual
 ;(load-theme 'misterioso t)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/paquetes/temas/")
-(load-theme 'misterioso t)
-;(load-theme 'naquadah t)
+;(load-theme 'misterioso t)
+(load-theme 'tomorrow-night-paradise t)
+;(load-theme ' t)
 
 ;; Quitamos toolbar
 (tool-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; Mostramos número de columna y número de linea
 (column-number-mode t)
@@ -53,13 +62,8 @@
 ;(add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 
 ;; Combinaciones de teclas adicionales
-(global-set-key (kbd "C-c <right>") 'comment-region)      ; Comenta bloque de código
-(global-set-key (kbd "C-c <left>") 'uncomment-region)     ; Descomenta bloque de código
-(global-set-key (kbd "C-x x <right>") 'windmove-right)    ; Ir a la ventana de la derecha
-(global-set-key (kbd "C-x x <down>") 'windmove-down)      ; Ir a la ventana de abajo
-(global-set-key (kbd "C-x x <left>") 'windmove-left)      ; Ir a la ventana de la izquierda
-(global-set-key (kbd "C-x x <up>") 'windmove-up)          ; Ir a la ventana de arriba
-(global-set-key (kbd "C-<return>") 'goto-line)            ; Ir a linea
+(global-set-key (kbd "C-<right>") 'comment-region)      ; Comenta bloque de código
+(global-set-key (kbd "C-<left>") 'uncomment-region)     ; Descomenta bloque de código
 
 ;; Activación de Emmet. Ayuda en la construcción de código Html
 (require 'emmet-mode)
@@ -99,10 +103,11 @@
 (require 'lua-mode)
 
 ;; Multiple-curosr. Permite selección múltiple
+(add-to-list 'load-path "~/.emacs.d/paquetes/multiple-cursors.el/")
 (require 'multiple-cursors)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c p") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
 
 ;; Helm. Paquete muy extenso que brinda un montón de funcionalidades a Emcas.
 ;; Aquí una wiki: https://github.com/emacs-helm/helm/wiki
@@ -214,3 +219,55 @@
 
 ;; Php mode...
 (require 'php-mode)
+
+;; Colorea apertura y cierre de corchetes.
+(require 'rainbow-delimiters)
+(global-rainbow-delimiters-mode)
+
+;; Copy and paste between Emac instances                                          
+(defun yank-to-clipboard()
+  (interactive)
+  (if (region-active-p)
+      (progn 
+	(shell-command-on-region (region-beginning) (region-end) "xsel -i -b")
+	(message "Yanked region to clipboard")
+	(deactivate-mark))
+    (message "No region active; can't yank to clipboard!")))
+
+(global-set-key [f8] 'yank-to-clipboard)
+
+;; Json prety print
+(defun beautify-json ()
+  (interactive)
+  (let ((b (if mark-active (min (point) (mark)) (point-min)))
+        (e (if mark-active (max (point) (mark)) (point-max))))
+    (shell-command-on-region b e
+     "python -mjson.tool" (current-buffer) t)))
+
+
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
+;; Configuración para mutt
+(defun mutt-mail-mode-hook ()
+  (flush-lines "^\\(> \n\\)*> -- \n\\(\n?> .*\\)*")
+  (not-modified)
+  (mail-text)
+  (goto-line 0)
+  (newline)
+  (goto-line 0)
+  (flyspell-mode 1)
+  (setq make-backup-files nil))
+
+(or (assoc "mutt-" auto-mode-alist)
+    (setq auto-mode-alist (cons '("/tmp/mutt.*" . mail-mode) auto-mode-alist)))
+(add-hook 'mail-mode-hook 'mutt-mail-mode-hook)
+
+
+;; Buffer move
+(require 'buffer-move)
+(global-set-key (kbd "<C-s-up>")     'buf-move-up)
+(global-set-key (kbd "<C-s-down>")   'buf-move-down)
+(global-set-key (kbd "<C-s-left>")   'buf-move-left)
+(global-set-key (kbd "<C-s-right>")  'buf-move-right)
+

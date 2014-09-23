@@ -135,5 +135,10 @@
   (insert tareas)
   )
 
+;; Imprime un mensaje con la tarea activa. Para verlo en consola
+(defun hamster-msg-tarea-activa()
+  (interactive)
+  (message (propertize (hamster-tarea-activa)
+		       'face '(:foreground "orange"))))
 
 (provide 'hamster)
