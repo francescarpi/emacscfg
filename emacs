@@ -271,3 +271,8 @@
 (global-set-key (kbd "<C-s-left>")   'buf-move-left)
 (global-set-key (kbd "<C-s-right>")  'buf-move-right)
 
+;; Virtual Env Wrapper
+(require 'virtualenvwrapper)
+(venv-initialize-interactive-shells) ;; if you want interactive shell support
+(venv-initialize-eshell) ;; if you want eshell support
+(setq venv-location "~/Entornos/")

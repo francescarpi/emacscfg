@@ -97,7 +97,6 @@ A+x helm-do-grep RET <seleccionar carpeta> C+u RET <indicar extensión ficheros>
 | C+r           | Buscar + buscar anterior                      |
 | A+g A+g       | Ir a una linea concreta                       |
 | C+c C+j       | Ir a una definición (clase, método, etc)      |
-| C+c g         | Rope. Saltar definición dentro proyecto       |
 | C+d           | Borrar un carácter                            |
 | A+0..9        | Seguido de un comando, lo ejecuta n veces     |
 | A+a           | Saltar a definición interior                  |
@@ -106,6 +105,18 @@ A+x helm-do-grep RET <seleccionar carpeta> C+u RET <indicar extensión ficheros>
 | C-c n         | Modo multi cursor. Seleccionar siguiente      |
 | C-c p         | Modo multi cursor. Seleccionar anterior       |
 | C-c a         | Modo multi cursor. Seleccionar todos          |
+
+### Rope
+
+Combinaciones de teclas para Rope
+
+| Combinación   | Descripción                                   |
+| C+c g         | Rope. Saltar definición dentro proyecto       |
+| C+x p o       | Abrir un proyecto                             |
+| C+x p k       | Cerrar un proyecto                            |
+| C+x p f       | Buscar fichero en proyecto                    |
+| C+x p c       | Abre fichero configuración del proyecto       |
+
 
 ### Selección
 
