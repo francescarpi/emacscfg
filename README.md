@@ -111,6 +111,7 @@ A+x helm-do-grep RET <seleccionar carpeta> C+u RET <indicar extensión ficheros>
 Combinaciones de teclas para Rope
 
 | Combinación   | Descripción                                   |
+| ------------- | --------------------------------------------- |
 | C+c g         | Rope. Saltar definición dentro proyecto       |
 | C+x p o       | Abrir un proyecto                             |
 | C+x p k       | Cerrar un proyecto                            |
