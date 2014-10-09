@@ -134,6 +134,8 @@ Relacionado con el modo visual, selección.
 | C+c <         | Identar la selección hacia la izquierda       |
 | Mayus+A+<der> | Tabular selección hacia la derecha            |
 | Mayus+A+<izq> | Tabular selección hacia la izquierda          |
+| C+c l         | Seleccionamos toda la linea                   |
+| C+x h         | Seleccionamos todo el documento               |
 
 ### Registros
 
@@ -202,6 +204,26 @@ Cuando estamos en la ventana de gestión de buffers
 | ------------- | --------------------------------------------- |
 | A+<espacio>   | Marcar                                        |
 | A+D           | Kill buffers marcados                         |
+
+### Mu4e
+
+Cliente de correo integrado en emacs
+
+| Combinación   | Descripción                                   |
+| ------------- | --------------------------------------------- |
+| C             | Redactar un correo                            |
+| j             | Saltar a una carpeta                          |
+| m             | Mover email                                   |
+| D             | Marcar mensaje para borrar                    |
+| A             | Acciones sobre attachtment                    |
+| a             | Otras acciones, como ver en PDF               |
+| e             | Guardar un attachtment                        |
+| t             | Menú con opciones para marcar el mensaje      |
+| C+c C+u       | Sincronizar imap                              |
+| R             | Responder correo                              |
+| C+u e         | Más opciones para descargar adjuntos          |
+
+
 
 ### Snippets
 
