@@ -278,27 +278,6 @@
 (venv-initialize-eshell) ;; if you want eshell support
 (setq venv-location "~/Entornos/")
 
-;; Mail
-(require 'mu4e)
-(setq mu4e-get-mail-command "offlineimap"
-      mu4e-update-interval 300
-      mu4e-headers-change-sorting "date"
-      mu4e-attachment-dir "~/Descargas"
-      mu4e-view-show-images t
-      mu4e-compose-dont-reply-to-self t
-      mu4e-user-mail-address-list '("farpi@apsl.net")
- )
-
-(require 'smtpmail)
-(setq send-mail-function 'smtpmail-send-it
-      smtpmail-local-domain "apsl.net"
-      user-full-name "Francesc Arpi | Apsl"
-      user-mail-address "farpi@apsl.net"
-      mu4e-compose-signature "Francesc Arpí | Apsl\nAnalista Programador\nc/Galileo Galilei Edificio Europa, Planta Baja\nMódulo Poniente 07121 Parc Bit Palma\nTeléfono: (+34) 971 43 97 71\nMail: farpi@apsl.net"
-      smtpmail-stream-type 'ssl
-      smtpmail-smtp-server "mail.apsl.net"
-      smtpmail-smtp-service 465
-      )
 
 ;; Flycheck
 (require 'flycheck)
