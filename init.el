@@ -32,9 +32,9 @@
                 nodejs-repl
                 org
                 paredit
+		powerline
                 restclient
                 smex
-                solarized-theme
                 web-mode
                 writegood-mode
                 yaml-mode)
@@ -58,9 +58,7 @@
       initial-major-mode 'org-mode)
 
 ;; Theme
-(if window-system
-  (load-theme 'solarized-light t)
-  (load-theme 'wombat t))
+(load-theme 'wombat t)
 
 ;; Scroll bar, tool bar, menu bar
 (tool-bar-mode -1)
@@ -70,6 +68,9 @@
 (delete-selection-mode t)
 (transient-mark-mode t)
 (setq x-select-enable-clipboard t)
+
+;; Powerline
+(powerline-default-theme)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
