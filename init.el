@@ -1,38 +1,84 @@
 ;;; init.el -- My Emacs configuration
 ;-*-Emacs-Lisp-*-
 
-;; Leave this here, or package.el will just add it again.
+;; Personal data
+(setq user-full-name "Francesc Arpi")
+(setq user-mail-address "francesc.arpi@gmail.com")
+
+;; Environment
+(setenv "PATH" (concat "/usr/local/bin:/opt/local/bin:/usr/bin:/bin" (getenv "PATH")))
+(require 'cl)
+
+;; Package system
+(load "package")
 (package-initialize)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-(require 'package)
-(setq package-enable-at-startup nil)
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(setq package-archive-enable-alist '(("melpa" deft magit)))
 
-;; Also add all directories within "lisp"
-;; I use this for packages I'm actively working on, mostly.
-(let ((files (directory-files-and-attributes "~/.emacs.d/lisp" t)))
-  (dolist (file files)
-    (let ((filename (car file))
-          (dir (nth 1 file)))
-      (when (and dir
-                 (not (string-suffix-p "." filename)))
-        (add-to-list 'load-path (car file))))))
+(defvar farpi/packages '(ac-slime
+                auto-complete
+                autopair
+                deft
+                feature-mode
+                flycheck
+                htmlize
+                magit
+                markdown-mode
+                marmalade
+                nodejs-repl
+                org
+                paredit
+                restclient
+                smex
+                solarized-theme
+                web-mode
+                writegood-mode
+                yaml-mode)
+  "Default packages")
 
-;; Adding themes
-(add-to-list 'custom-theme-load-path (expand-file-name "themes" user-emacs-directory))
+(defun farpi/packages-installed-p ()
+  (loop for pkg in farpi/packages
+        when (not (package-installed-p pkg)) do (return nil)
+        finally (return t)))
 
-(require 'init-utils)
-(require 'init-elpa)
-
-(unless (package-installed-p 'use-package)
+(unless (farpi/packages-installed-p)
+  (message "%s" "Refreshing package database...")
   (package-refresh-contents)
-  (package-install 'use-package))
+  (dolist (pkg farpi/packages)
+    (when (not (package-installed-p pkg))
+      (package-install pkg))))
+
+;; Splash screen
+(setq inhibit-splash-screen t
+      initial-scratch-message nil
+      initial-major-mode 'org-mode)
+
+;; Theme
+(if window-system
+  (load-theme 'solarized-light t)
+  (load-theme 'wombat t))
+
+;; Scroll bar, tool bar, menu bar
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+
+;; Marking text
+(delete-selection-mode t)
+(transient-mark-mode t)
+(setq x-select-enable-clipboard t)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (use-package fullframe))))
+ '(package-selected-packages
+   (quote
+    (yaml-mode writegood-mode web-mode solarized-theme smex restclient paredit nodejs-repl marmalade markdown-mode magit htmlize flycheck feature-mode deft autopair ac-slime))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
